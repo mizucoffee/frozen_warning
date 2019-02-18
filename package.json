@@ -1,0 +1,13 @@
+{
+  "name": "frozen_warning",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/mizucoffee/frozen_warning",
+  "author": "Ritsuki Goto <develop@mizucoffee.net>",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.0.1",
+    "fs-extra": "^7.0.1",
+    "twitter": "^1.7.1"
+  }
+}
