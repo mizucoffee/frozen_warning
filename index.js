@@ -18,15 +18,16 @@ const list = fs.readFileSync('list.txt', 'utf8').split('\n')
       const user = await client.get('users/show', { screen_name: screen_name });
       return user.followers_count
     }))
-    console.log(followers.join(','))
-    fs.appendFile('output.csv', `${followers.join(',')}\n`)
+    const time = Math.floor( new Date().getTime() / 1000 )
+    console.log(`${time},${followers.join(',')}`)
+    fs.appendFile('output.csv', `${time},${followers.join(',')}\n`)
   }
 
 fs.pathExists('output.csv')
   .then(exists => {
     if(!exists) {
-      console.log(list.join(','))
-      fs.appendFile('output.csv', `${list.join(',')}\n`)
+      console.log(`time,${list.join(',')}`)
+      fs.appendFile('output.csv', `time,${list.join(',')}\n`)
     }
     setInterval(loop, 1000 * 60 * 15)
     loop()
